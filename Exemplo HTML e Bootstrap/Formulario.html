@@ -1,0 +1,78 @@
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>Sistemas de Informação PUC Minas</title>
+      <!-- CSS do Bootstrap -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Tema -->
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	  
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	  
+      <script type="text/javascript" src="js/bootbox/bootbox.min.js"></script>
+	  <script type="text/javascript" src="js/sendData.js"></script>
+	  <script type="text/javascript" src="js/validations.js"></script>
+	  
+   </head>
+   <body>
+   
+      <nav class="navbar navbar-default" >
+         <div class="container">			
+            <a class="navbar-brand" href="https://www.pucminas.br">Página Oficial</a>
+            <a class="navbar-brand" href="http://portal.pucminas.br/uberlandia/">Campus Uberlândia</a>
+            <a class="navbar-brand" href="Formulario.html">Entre em Contato</a>
+         </div>
+      </nav>
+	  
+      <div class="container">
+         <form>
+            <div class="form-group">
+               <label for="inputNome">Nome</label>
+               <input type="text" class="form-control" id="inputNome" placeholder="Seu Nome"> 
+            </div>
+            <div class="form-group">
+               <label for="inputNascimento">Data de Nascimento</label>
+               <input type="date" class="form-control" id="inputNascimento" placeholder="Sua Data de Nascimento">
+            </div>
+            <div class="form-group">
+               <label for="inputCelular">Celular</label>
+               <input type="tel" class="form-control" id="inputCelular" placeholder="Seu Celular" maxlength="15" onkeyup="mascara()">
+            </div>
+            <div class="form-group">
+               <label for="inputEmail">Endereço de email</label>
+               <input type="email" class="form-control" id="inputEmail" placeholder="Seu email" >
+               <small class="form-text text-muted">Garantimos que seu e-mail não será compartilhado.</small>
+            </div>
+            <div class="form-group">
+               <label for="inputSexo">Sexo</label>
+               <select class="form-control" id="inputSexo">
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="inputCurso">Curso de Interesse</label>
+               <select class="form-control" id="inputCurso">
+                  <option>Sistemas de Informação</option>
+                  <option>Teologia</option>
+                  <option>Direito</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="inputMensagem">Mensagem</label>
+               <textarea class="form-control" id="inputMensagem" rows="3"></textarea>
+            </div>
+			
+			<input type="button" onclick="verificaCamposEmBranco()" class="btn btn-primary" value="Enviar">
+			
+         </form>
+		 
+         </br>
+		 
+         <footer>
+            <div class="text-center">© 2021 Copyright: PUC Minas</div>
+         </footer>
+      </div>
+   </body>
+</html>
