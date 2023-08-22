@@ -1,0 +1,75 @@
+
+Linguagem utilizada: NodeJS/express
+Banco de Dados utilizado: MongoDB
+ORM utilzado: Prisma
+
+Rodar projeto: yarn dev
+
+Fluxo do projeto: Services -> Controllers -> Routes
+
+Serviços criados: 
+Buscas realizadas através de API Client como Insomnia ou Postman
+    - Exemplos de buscas:
+
+    1) Busca geral (ListAllService/Controllers):
+        http://localhost:3333/
+        Retorno: 
+            {
+                "message": "Fullstack Challenge 🏅 - Space X API"
+            }
+
+    2) Busca com paginação e filtros:
+        http://localhost:3333/launches?limit=10&page=1&search=FalconSat
+        Essa busca traz a primeira página, com limite de 10 registros com o filtro do termo "FalconSat"
+        Retorno:
+                {
+            "results": [
+                {
+                    "id": "5eb87cd9ffd86e000604b32a",
+                    "name": "FalconSat",
+                    "details": "Engine failure at 33 seconds and loss of vehicle"
+                }
+            ],
+            "totalDocs": 1,
+            "page": 1,
+            "totalPages": 1,
+            "hasNext": false,
+            "hasPrev": false
+        }
+
+    3) Busca das estatíticas:
+        http://localhost:3333/launches/stats
+        Essa busca traz as estatíticas sobre os dados que seriam usados nos gráficos da interface
+
+        Retorno:
+                    {
+            "totalSuccess": 138,
+            "totalFailed": 5,
+            "groupRockets": [
+                {
+                    "_count": {
+                        "rocket": 140
+                    },
+                    "rocket": "5e9d0d95eda69973a809d1ec"
+                },
+                {
+                    "_count": {
+                        "rocket": 3
+                    },
+                    "rocket": "5e9d0d95eda69974db09d1ed"
+                },
+                {
+                    "_count": {
+                        "rocket": 5
+                    },
+                    "rocket": "5e9d0d95eda69955f709d1eb"
+                }
+            ],
+            "coresReused": 79,
+            "coresNotReused": 75
+        }
+
+
+Observação adicional: o projeto conta com uma parte de autenticação usando JWT, por meio de um Middleware. 
+
+O objetivo era foi autenticação para realização de login e futuros acessos a rotas privadas.
