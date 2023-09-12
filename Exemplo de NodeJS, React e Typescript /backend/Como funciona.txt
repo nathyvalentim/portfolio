@@ -1,0 +1,20 @@
+
+Postgres BD com Prisma: ORM
+Trajetória: Service -> Controller -> Routes
+
+interface: usa-se no service quando quero receber parametros que serao enviados para o service. Nao usa-se quando quero listar tudo porque nao passo parametros neste caso.
+req.query: usa-se no controller e contém os parâmetros de consulta da solicitação, comum em GET e DELETE com parametros.
+req.body: usa-se no controller quando é preciso receber dentro do corpo da requisicao quais sao os itens (estao la no service), comum em POST e PUT.
+
+
+Node:
+Criar diretório e abre ele no terminal
+Yarn init -y //criar um projeto
+Yarn add express //add framework express
+Cria um índex.js e const express = require('express')
+Node index.js roda o código
+
+Backend: 
+Criando a configuração de typscript: yarn tsc --init
+
+Rodar projeto: yarn dev
